@@ -22,8 +22,8 @@ function getData() {
         message_with_tag = "<h4 class='message_h4' style='word-break: break-all;'>" + message + "</h4>";
         like_button = "<button class='btn btn-warning' id=" + firebase_message_id + " value=" + like + " onclick='updateLike(this.id)'>";
         span_with_tag = "<span class='glyphicon glyphicon-thumbs-up'>Like: " + like + "</span></button><hr>";
-
-        row = name_with_tag + message_with_tag + like_button + span_with_tag;
+        bu = "<button class='btn btn-danger' id=" + firebase_message_id + " onclick='deletet(this.id)'>Delete</button>";
+        row = name_with_tag + message_with_tag + like_button + span_with_tag + bu;
         document.getElementById("output").innerHTML += row;
         window.scrollTo(0, document.body.scrollHeight);
         document.getElementById('ting12').play();
@@ -64,6 +64,10 @@ function updateLike(message_id) {
     like: updated_likes
   });
 
+}
+function deletet(message_idd){
+  w1 = localStorage.getItem('whichredirect');
+  firebase.database().ref(w1+'/'+message_idd).remove();
 }
 
 function back() {
