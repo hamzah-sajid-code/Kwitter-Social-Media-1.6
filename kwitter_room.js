@@ -26,14 +26,17 @@ function addRoom() {
             firebase.database().ref('/pass').child(roomname).update({
                   'Room Name': roomname
             });
+            pus = document.getElementById('pusa').value;
             console.log('This is private room')
             roomname = document.getElementById('id_room').value;
             usernumm = localStorage.getItem('User name')
             localStorage.setItem(roomname, roomname);
             firebase.database().ref('/pus').child(roomname).update({
-                  'Password': usernumm
+                  'Password': pus
             });
       }
+      document.getElementById('pusa').value = "";
+      document.getElementById('id_room').value = "";
 }
 
 function getData() {
