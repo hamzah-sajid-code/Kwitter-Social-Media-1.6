@@ -23,7 +23,7 @@ function getData() {
         like_button = "<button class='btn btn-warning' id=" + firebase_message_id + " value=" + like + " onclick='updateLike(this.id)'>";
         span_with_tag = "<span class='glyphicon glyphicon-thumbs-up'>Like: " + like + "</span></button> <button class='btn btn-danger' id=" + firebase_message_id + " onclick='deletet(this.id)'>Delete</button><hr>";
 //         bu = "";
-        row = name_with_tag + message_with_tag + like_button + span_with_tag + bu;
+        row = name_with_tag + message_with_tag + like_button + span_with_tag;
         document.getElementById("output").innerHTML += row;
         window.scrollTo(0, document.body.scrollHeight);
         document.getElementById('ting12').play();
